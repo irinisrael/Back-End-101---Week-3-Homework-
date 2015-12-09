@@ -1,8 +1,12 @@
 class Utility
 	def count_words(sentence)
-		names = sentence.split()
+		words = sentence.split()
+		words.map!{ |element| element.gsub(/,/, '')}
+		# To test array with comma out:
+		#puts words
+
 		counts = Hash.new(0)
-		names.each { |name| counts[name] += 1}
+		words.each { |word| counts[word] += 1}
 		puts counts
 	end
 end
